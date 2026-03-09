@@ -27,7 +27,7 @@ grating tokenized human instructions, Bird’s-Eye-View (BEV) tokens and soft pr
 
 ![routing](asset/routing.jpg)
 
-Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE** is the layer of our proposed planning expert shown in figure~\ref{fig:pipeline}. BEV hidden is calculated only once during inference, while expert weights need to be calculated in every layer. 
+Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE** is the layer of our proposed planning expert. BEV hidden is calculated only once during inference, while expert weights need to be calculated in every layer. 
 
 ---
 
