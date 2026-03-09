@@ -15,7 +15,7 @@ Recent advances in Vision-Language-Action (VLA) models have shown promising capa
 
 ### SAMoE-VLA Framework
 
-![framework](assets/framework.jpg)
+![framework](asset/framework.jpg)
 
 Overview of our SAMoE-VLA. SAMoE-VLA employs two functional experts. A **World-Language Expert**: This module performs multimodal processing by inte-
 grating tokenized human instructions, Bird’s-Eye-View (BEV) tokens and soft prompts for world embeddings. A **Planning Expert**: This expert utilizes a structure based on a scene adaptive Mixture-of-Experts (SAMoE) layers routed by the scene representation extracted from Deformable Scene Encoder and receives ego-state tokens and noisy action tokens as its input. Our model unifies these experts through Conditional Cross-Modal Causal Attention(CMCA).
@@ -25,7 +25,7 @@ grating tokenized human instructions, Bird’s-Eye-View (BEV) tokens and soft pr
 
 ### Scene-Adaptive MoE
 
-![routing](assets/routing.jpg)
+![routing](asset/routing.jpg)
 
 Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE** is the layer of our proposed planning expert shown in figure~\ref{fig:pipeline}. BEV hidden is calculated only once during inference, while expert weights need to be calculated in every layer. 
 
@@ -33,7 +33,7 @@ Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE*
 
 ### Comparison between different MoE
 
-![moe](assets/moe.jpg)
+![moe](asset/moe.jpg)
 
 ---
 
