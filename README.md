@@ -138,8 +138,3 @@ pip install numba==0.57 torchmetrics==1.4.1 networkx==2.5
 
 * **2026.03** 🔥 We release the core code of **SAMoE**.
 * **2026.03** 🔧 We release the environment setup for **SAMoE-VLA**.
-
-Highlights
-```
-
-可以把你的贡献压缩成 **3 bullet points**，对 reviewer 和 GitHub star 数很关键。
