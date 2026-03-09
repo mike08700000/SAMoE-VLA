@@ -33,7 +33,7 @@ Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE*
 
 ### Comparison between different MoE
 
-![attention](assets/moe.png)
+![moe](assets/moe.png)
 
 ---
 
@@ -66,14 +66,6 @@ pip install mmdet==2.24.0
 pip install -r requirements_internvl.txt
 pip install flash-attn==2.3.6 --no-build-isolation
 ```
-
-If you encounter installation issues with `mmcv-full` on H20, try:
-
-```
-TORCH_CUDA_ARCH_LIST="9.0" pip install --force-reinstall mmcv-full==1.5.0
-```
-
----
 
 ## 3. Install MMDet3D and Additional Packages
 
