@@ -7,17 +7,7 @@ Implementation of **SAMoE-VLA**, a scene-adaptive Vision-Language-Action framewo
 
 # Abstract
 
-Recent advances in Vision-Language-Action (VLA) models have shown promising capabilities in autonomous driving by leveraging the understanding and reasoning strengths of Large Language Models (LLMs).
-
-However, our empirical analysis reveals that directly applying existing token-level MoE mechanisms—which are inherited from LLM architectures—to VLA models results in unstable performance and safety degradation in autonomous driving, highlighting a misalignment between token-based expert specialization and scene-level decision-making.
-
-To address this, we propose **SAMoE-VLA**, a scene-adaptive Vision-Language-Action framework that conditions expert selection on structured scene representations instead of token embeddings. Our key idea is to derive the MoE routing signal from bird’s-eye-view (BEV) features that encapsulate traffic scene context, enabling scenario-dependent expert weighting and merging tailored to distinct driving conditions.
-
-Furthermore, to support temporally consistent reasoning across world-knowledge, perception, language, and action, we introduce a **Conditional Cross-Modal Causal Attention** mechanism that integrates world state, linguistic intent, and action history into a unified causal reasoning process.
-
-Extensive experiments on the **nuScenes open-loop planning dataset** and **LangAuto closed-loop benchmark** demonstrate that SAMoE-VLA achieves state-of-the-art performance, outperforming prior VLA-based and world-model-based approaches with fewer parameters.
-
-Our code will be released soon.
+Recent advances in Vision-Language-Action (VLA) models have shown promising capabilities in autonomous driving by leveraging the understanding and reasoning strengths of Large Language Models (LLMs). However, our empirical analysis reveals that directly applying existing token-level MoE mechanisms—which are inherited from LLM architectures—to VLA models results in unstable performance and safety degradation in autonomous driving, highlighting a misalignment between token-based expert specialization and scene-level decision-making. To address this, we propose **SAMoE-VLA**, a scene-adaptive Vision-Language-Action framework that conditions expert selection on structured scene representations instead of token embeddings. Our key idea is to derive the MoE routing signal from bird’s-eye-view (BEV) features that encapsulate traffic scene context, enabling scenario-dependent expert weighting and merging tailored to distinct driving conditions. Furthermore, to support temporally consistent reasoning across world-knowledge, perception, language, and action, we introduce a **Conditional Cross-Modal Causal Attention** mechanism that integrates world state, linguistic intent, and action history into a unified causal reasoning process. Extensive experiments on the **nuScenes open-loop planning dataset** and **LangAuto closed-loop benchmark** demonstrate that SAMoE-VLA achieves state-of-the-art performance, outperforming prior VLA-based and world-model-based approaches with fewer parameters. Our code will be released soon.
 
 ---
 
@@ -25,31 +15,23 @@ Our code will be released soon.
 
 ### SAMoE-VLA Framework
 
-![framework](assets/framework.png)
+![framework](assets/framework.jpg)
 
-SAMoE-VLA introduces a **scene-adaptive routing mechanism** that derives Mixture-of-Experts routing signals from structured **BEV scene representations**, enabling scenario-aware expert selection tailored to different driving conditions.
+Overview of our SAMoE-VLA. SAMoE-VLA employs two functional experts. A **World-Language Expert**: This module performs multimodal processing by inte-
+grating tokenized human instructions, Bird’s-Eye-View (BEV) tokens and soft prompts for world embeddings. A **Planning Expert**: This expert utilizes a structure based on a scene adaptive Mixture-of-Experts (SAMoE) layers routed by the scene representation extracted from Deformable Scene Encoder and receives ego-state tokens and noisy action tokens as its input. Our model unifies these experts through Conditional Cross-Modal Causal Attention(CMCA).
+---
+
+### Scene-Adaptive MoE
+
+![routing](assets/routing.jpg)
+
+Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE** is the layer of our proposed planning expert shown in figure~\ref{fig:pipeline}. BEV hidden is calculated only once during inference, while expert weights need to be calculated in every layer. 
 
 ---
 
-### Scene-Adaptive MoE Routing
+### Comparison between different MoE
 
-![routing](assets/routing.png)
-
-Instead of token-level routing inherited from LLM architectures, SAMoE-VLA performs **scene-level expert selection**, allowing experts to specialize in distinct driving scenarios (e.g., intersections, dense traffic, pedestrian interactions).
-
----
-
-### Conditional Cross-Modal Causal Attention
-
-![attention](assets/causal_attention.png)
-
-To support temporally consistent reasoning across modalities, we introduce **Conditional Cross-Modal Causal Attention**, which jointly models:
-
-* world state
-* linguistic instructions
-* action history
-
-within a unified causal reasoning process.
+![attention](assets/moe.png)
 
 ---
 
