@@ -33,7 +33,7 @@ Overview of our Scene Adaptive MoE guided by Deformable Scene Encoder. **SA-MoE*
 
 ### Comparison between different MoE
 
-![moe](assets/moe.png)
+![moe](assets/moe.jpg)
 
 ---
 
