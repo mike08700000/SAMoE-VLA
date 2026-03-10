@@ -5,6 +5,18 @@ Implementation of **SAMoE-VLA**, a scene-adaptive Vision-Language-Action framewo
 
 ---
 
+# Paper
+
+📄 **SAMoE-VLA: A Scene Adaptive Mixture-of-Experts Vision-Language-Action Model for Autonomous Driving**
+
+* **Authors:** Zihan You, Hongwei Liu, Chenxu Dang, Zhe Wang, Sining Ang, Aoqi Wang, Yan Wang
+* **arXiv:** [https://arxiv.org/abs/2603.08113](https://arxiv.org/abs/2603.08113)
+* **Year:** 2026
+
+SAMoE-VLA proposes a **scene-adaptive Mixture-of-Experts routing mechanism** for Vision-Language-Action autonomous driving models, where expert selection is conditioned on structured BEV scene representations instead of token-level embeddings.
+
+---
+
 # Abstract
 
 Recent advances in Vision-Language-Action (VLA) models have shown promising capabilities in autonomous driving by leveraging the understanding and reasoning strengths of Large Language Models (LLMs). However, our empirical analysis reveals that directly applying existing token-level MoE mechanisms—which are inherited from LLM architectures—to VLA models results in unstable performance and safety degradation in autonomous driving, highlighting a misalignment between token-based expert specialization and scene-level decision-making. To address this, we propose **SAMoE-VLA**, a scene-adaptive Vision-Language-Action framework that conditions expert selection on structured scene representations instead of token embeddings. Our key idea is to derive the MoE routing signal from bird’s-eye-view (BEV) features that encapsulate traffic scene context, enabling scenario-dependent expert weighting and merging tailored to distinct driving conditions. Furthermore, to support temporally consistent reasoning across world-knowledge, perception, language, and action, we introduce a **Conditional Cross-Modal Causal Attention** mechanism that integrates world state, linguistic intent, and action history into a unified causal reasoning process. Extensive experiments on the **nuScenes open-loop planning dataset** and **LangAuto closed-loop benchmark** demonstrate that SAMoE-VLA achieves state-of-the-art performance, outperforming prior VLA-based and world-model-based approaches with fewer parameters. Our code will be released soon.
@@ -114,3 +126,31 @@ pip install numba==0.57 torchmetrics==1.4.1 networkx==2.5
 
 * **2026.03** 🔥 We release the core code of **SAMoE**.
 * **2026.03** 🔧 We release the environment setup for **SAMoE-VLA**.
+
+
+
+
+
+
+---
+
+# Citation
+
+If you find our work useful in your research, please consider citing:
+
+```bibtex
+@misc{you2026samoevlasceneadaptivemixtureofexperts,
+  title={SAMoE-VLA: A Scene Adaptive Mixture-of-Experts Vision-Language-Action Model for Autonomous Driving},
+  author={Zihan You and Hongwei Liu and Chenxu Dang and Zhe Wang and Sining Ang and Aoqi Wang and Yan Wang},
+  year={2026},
+  eprint={2603.08113},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2603.08113}
+}
+```
+
+```
+# License
+This project is released under the MIT License.
+```
