@@ -139,14 +139,11 @@ pip install numba==0.57 torchmetrics==1.4.1 networkx==2.5
 If you find our work useful in your research, please consider citing:
 
 ```bibtex
-@misc{you2026samoevlasceneadaptivemixtureofexperts,
+@article{you2026samoe,
   title={SAMoE-VLA: A Scene Adaptive Mixture-of-Experts Vision-Language-Action Model for Autonomous Driving},
-  author={Zihan You and Hongwei Liu and Chenxu Dang and Zhe Wang and Sining Ang and Aoqi Wang and Yan Wang},
-  year={2026},
-  eprint={2603.08113},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  url={https://arxiv.org/abs/2603.08113}
+  author={You, Zihan and Liu, Hongwei and Dang, Chenxu and Wang, Zhe and Ang, Sining and Wang, Aoqi and Wang, Yan},
+  journal={arXiv preprint arXiv:2603.08113},
+  year={2026}
 }
 ```
 
